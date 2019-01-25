@@ -13,7 +13,7 @@
 <div class="alert alert-danger text-center" *ngIf="error">Cidade não encontrada</div>
 
 <div *ngIf="city">
-  <h4>{{city.name}}, {{city.sys.country}} {{city.main.temp - 273.15}}ºC</h4>
+  <h4>{{city.name}}, {{city.sys.country}} {{city.main.temp - 273.15 | number}}ºC</h4>
   <table class="table table-bordered">
     <tr *ngIf="city.weather.length > 0">
       <th>Céu</th>
