@@ -1,4 +1,11 @@
-# BraviFrontend - Build with docker
+## Pre Requisits
+
+- Node 8+
+- Npm
+- Angular CLI 
+- Docker
+
+### BraviFrontend - Build with docker
 
 - Build image: 
 ```
