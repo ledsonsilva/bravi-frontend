@@ -14,3 +14,8 @@ $ docker run -d --name bravi-frontend -p 8002:80 bravi-frontend-angular
 ```
 http://localhost:8002/
 ```
+
+### Contact
+
+Email: ledson.dev@gmail.com
+Phone: 61 991740585
