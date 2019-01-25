@@ -1,10 +1,35 @@
-<h3>Informações sobre o clima</h3>
+<h3>Tempo atual e previsões em sua cidade</h3>
 
-<div class="card">
-  <div class="card-header font-weight-bold">Formulário</div>
-  <div class="card-body">
-    <p class="card-text">
-      Formulário de pesquisa aqui.
-    </p>
+<form [formGroup]="form" (ngSubmit)="list()">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Exemplo: Brasilia, BR" formControlName="city">
+
+    <div class="input-group-append">
+      <button type="submit" class="btn btn-outline-dark" type="button" id="button-addon2" (click)="list()">Pesquisar</button>
+    </div>
   </div>
+</form>
+
+<div class="alert alert-danger text-center" *ngIf="error">Cidade não encontrada</div>
+
+<div *ngIf="city">
+  <h4>{{city.name}}, {{city.sys.country}} {{city.main.temp - 273.15}}ºC</h4>
+  <table class="table table-bordered">
+    <tr *ngIf="city.weather.length > 0">
+      <th>Céu</th>
+      <td>{{city.weather[0].description}}</td>
+    </tr>
+    <tr>
+      <th>Umidade do ar</th>
+      <td>{{city.main.humidity}}%</td>
+    </tr>
+    <tr>
+      <th>Pressão</th>
+      <td>{{city.main.pressure}} hpa</td>
+    </tr>
+    <tr>
+      <th>Coordenadas</th>
+      <td>[{{city.coord.lat}}, {{city.coord.lon}}]</td>
+    </tr>
+  </table>
 </div>
